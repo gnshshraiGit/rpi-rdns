@@ -11,7 +11,7 @@ http.createServer(function (req, res) {
             var appName = url.parse(req.url, true).query["app"];
             var port = url.parse(req.url, true).query["port"];
             IPMaps[appName] = {};
-            IPMaps[appName].IP = getClientAddress(req);
+            IPMaps[appName].IP = getClientAddress(req).split(':')[0];
             IPMaps[appName].port = port;
 	    IPMaps[appName].name = appName;
             res.writeHead(200, { 'Content-Type': 'application/json' });
