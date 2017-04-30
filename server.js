@@ -2,6 +2,7 @@
 var url = require('url');
 var port = process.env.port || 1337;
 
+//IP maps object to return in response to IP update requests
 var IPMaps = {};
 
 http.createServer(function (req, res) {
